@@ -1,0 +1,22 @@
+责任链gof
+定义define: 一个请求 由一系列节点处理 满足条件的节点有责任
+负责处理请求，对client不需要care一些detail
+
+适用场景
+1. 多个不同的处理器处理同一个request,具体由哪一个处理器
+执行其实是在运行过程中决定的（binging node operate）
+2. 这个请求串联多个node 动态处理
+
+和processor模式的区别在哪里？
+1. 核心区别，责任链的node模式 他的处理器node只能对这次的请求做出
+处理 或者 不处理(交给下一个处理器对象) 。。。 foreach node
+
+2.processor模式的话 ，他的每一个processor只能对本processor操作对象范围生效
+无法指定其他的processor
+
+和策略模式的区别在哪里？
+1. 策略模式 重在不同的算法组合, 这里的组合业务逻辑操作的实体对象是一样的
+而processor模式可以对不同的实体对象进行操作
+
+
+
